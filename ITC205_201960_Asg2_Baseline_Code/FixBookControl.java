@@ -52,7 +52,7 @@ public class FixBookControl {
 			library.Repair_BOOK(book);//'LIB' changed to 'library',//'Cur_Book' changed to 'book'
 		}
 		book = null;//'Cur_Book' changed to 'book'
-		fixBookUi.Set_State(FixBookUI.a.READY);//'UI' changed to 'fixBookUi'
+		fixBookUi.setState(FixBookUI.a.READY);//'UI' changed to 'fixBookUi','Set_State' changed to 'setState'
 		controlState = ControlState.READY;	//'CONTROL_STATE' changed to 'ControlState','StAtE' changed to 'controlState'	
 	}
 
@@ -61,7 +61,7 @@ public class FixBookControl {
 		if (!controlState.equals(ControlState.READY)) {//'CONTROL_STATE' changed to 'ControlState','StAtE' changed to 'controlState'
 			throw new RuntimeException("FixBookControl: cannot call scanningComplete except in READY state");
 		}	
-		fixBookUi.Set_State(FixBookUI.UI_STATE.COMPLETED);//'UI' changed to 'fixBookUi'		
+		fixBookUi.setState(FixBookUI.UiState.COMPLETED);//'UI' changed to 'fixBookUi','Set_State' changed to 'setState','UI_STATE' changed to 'UiState'		
 	}
 
 
