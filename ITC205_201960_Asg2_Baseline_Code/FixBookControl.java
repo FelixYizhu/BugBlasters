@@ -1,10 +1,10 @@
 public class FixBookControl {
 	
-	private FixBookUI UI; //'UI' changed to 'fixBookUi'
+	private FixBookUI fixBookUi; //'UI' changed to 'fixBookUi'
 	private enum ControlState { INITIALISED, READY, FIXING };//'CONTROL_STATE' changed to 'ControlState'
 	private ControlState controlState;//'CONTROL_STATE' changed to 'ControlState','StAtE' changed to 'controlState'
 	
-	private library library;//'LIB' changed to 'library'
+	private Library library;//'library' changed to 'Library','LIB' changed to 'library'
 	private Book book;//'book' changed to 'Book','Cur_Book' changed to 'book'
 
 
@@ -14,12 +14,12 @@ public class FixBookControl {
 	}
 	
 	
-	public void setUI(FixBookUI fixBookUI) {//'Set_Ui' changed to 'setUI','ui' changed to 'fixBookUI'
+	public void setUi(FixBookUI fixBookUi) {//'Set_Ui' changed to 'setUi','ui' changed to 'fixBookUi'
 		if (!controlState.equals(ControlState.INITIALISED)) {//'CONTROL_STATE' changed to 'ControlState','StAtE' changed to 'controlState'
 			throw new RuntimeException("FixBookControl: cannot call setUI except in INITIALISED state");
 		}	
-		this.fixBookUi = fixBookUI;//'UI' changed to 'fixBookUi','ui' changed to 'fixBookUI'
-		fixBookUI.Set_State(fixBookUi.UiState.READY);//'ui' changed to 'fixBookUI','Set_State' changed to 'setState','FixBookUI' changed to 'fixBookUi','UI_STATE' changed to 'UiState'
+		this.fixBookUi = fixBookUi;//'UI' changed to 'fixBookUi','ui' changed to 'fixBookUi'
+		fixBookUi.setState(fixBookUi.UiState.READY);//'ui' changed to 'fixBookUI','Set_State' changed to 'setState','FixBookUI' changed to 'fixBookUi','UI_STATE' changed to 'UiState'
 		controlState = ControlState.READY;	//'CONTROL_STATE' changed to 'ControlState','StAtE' changed to 'controlState'	
 	}
 
@@ -28,7 +28,7 @@ public class FixBookControl {
 		if (!controlState.equals(ControlState.READY)) {//'CONTROL_STATE' changed to 'ControlState','StAtE' changed to 'controlState'
 			throw new RuntimeException("FixBookControl: cannot call bookScanned except in READY state");
 		}	
-		book = library.Book(bookId);//'LIB' changed to 'library','Cur_Book' changed to 'book','Book' changed to 'getBook'
+		book = library.getBook(bookId);//'LIB' changed to 'library','Cur_Book' changed to 'book','Book' changed to 'getBook'
 		
 		if (book == null) {//'Cur_Book' changed to 'book'
 			fixBookUi.display("Invalid bookId");//'UI' changed to 'fixBookUi'
