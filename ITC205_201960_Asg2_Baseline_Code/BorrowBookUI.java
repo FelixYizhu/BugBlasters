@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class BorrowBookUI {
 	
-	public static enum UIState {INITIALISED, READY, RESTRICTED, SCANNING, IDENTIFIED, FINALISING, COMPLETED, CANCELLED};//'UI_STATE' changed to'UIState'
+	public static enum UiState {INITIALISED, READY, RESTRICTED, SCANNING, IDENTIFIED, FINALISING, COMPLETED, CANCELLED};//'UI_STATE' changed to'UiState'
 
 	private BorrowBookControl borrowBookControl;//'CONTROL' changed to'borrowBookControl'
 	private Scanner input;
