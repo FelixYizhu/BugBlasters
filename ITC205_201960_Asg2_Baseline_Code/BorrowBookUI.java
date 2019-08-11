@@ -25,7 +25,7 @@ public class BorrowBookUI {
 	}
 	
 	public void setState(UiState state) {//'Set_State' changed to'setState','UI_STATE' changed to'UiState','STATE' changed to'state'
-		this.StaTe = state;//'StaTe' changed to'state','STATE' changed to'state'
+		this.state = state;//'StaTe' changed to'state','STATE' changed to'state'
 	}
 
 	public void run() {
