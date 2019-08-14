@@ -8,7 +8,7 @@ public class PayFineControl {
 	private Member member; //member is changed to Member and MeMbEr is changed to member
 
 
-	public payFineControl() { /PayFineControl is changed to payFineControl
+	public payFineControl() { //PayFineControl is changed to payFineControl
 		this.library = Library.getInstance(); //LiBrArY is changed to library and LiBrArY.INSTANCE() is changed to Library.getInstance()
 		state = ControlState.INITIALISED;//StAtE is changed to state and CONTROL_STATE IS CHANGED TO ControlState
 	}
