@@ -2,64 +2,58 @@ import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 public class Calendar {
-	
-	private static Calendar SeLf;
-	private static java.util.Calendar CaLeNdAr;
-	
+	private static Calendar self;//'SeLf' changed to 'self'
+	private static java.util.Calendar calendar;//'CaLeNdAr' changed to 'calendar'
 	
 	private Calendar() {
-		CaLeNdAr = java.util.Calendar.getInstance();
+		calendar = java.util.Calendar.getInstance();//'CaLeNdAr' changed to 'calendar'
 	}
 	
-	public static Calendar INSTANCE() {
-		if (SeLf == null) {
-			SeLf = new Calendar();
+	public static Calendar getInstance() {//'INSTANCE' changed to 'getInstance'
+		if (self == null) {//'SeLf' changed to 'self'
+			self = new Calendar();//'SeLf' changed to 'self'
 		}
-		return SeLf;
+		return self;//'SeLf' changed to 'self'
 	}
-	
 	public void incrementDate(int days) {
-		CaLeNdAr.add(java.util.Calendar.DATE, days);		
+		calendar.add(java.util.Calendar.DATE, days);//'CaLeNdAr' changed to 'calendar'		
 	}
-	
-	public synchronized void Set_dATE(Date date) {
+	public synchronized void setDate(Date date) {//'Set_dATE' changed to 'setDate'	
 		try {
-			CaLeNdAr.setTime(date);
-	        CaLeNdAr.set(java.util.Calendar.HOUR_OF_DAY, 0);  
-	        CaLeNdAr.set(java.util.Calendar.MINUTE, 0);  
-	        CaLeNdAr.set(java.util.Calendar.SECOND, 0);  
-	        CaLeNdAr.set(java.util.Calendar.MILLISECOND, 0);
+			calendar.setTime(date);//'CaLeNdAr' changed to 'calendar'	
+			calendar.set(java.util.Calendar.HOUR_OF_DAY, 0);  //modify the indentation,'CaLeNdAr' changed to 'calendar'
+			calendar.set(java.util.Calendar.MINUTE, 0);  //modify the indentation,'CaLeNdAr' changed to 'calendar'
+			calendar.set(java.util.Calendar.SECOND, 0);  //modify the indentation,'CaLeNdAr' changed to 'calendar'
+			calendar.set(java.util.Calendar.MILLISECOND, 0);//modify the indentation,'CaLeNdAr' changed to 'calendar'
 		}
 		catch (Exception e) {
 			throw new RuntimeException(e);
 		}	
 	}
-	public synchronized Date Date() {
+	public synchronized Date getDate() {//'Date' changed to 'getDate'
 		try {
-	        CaLeNdAr.set(java.util.Calendar.HOUR_OF_DAY, 0);  
-	        CaLeNdAr.set(java.util.Calendar.MINUTE, 0);  
-	        CaLeNdAr.set(java.util.Calendar.SECOND, 0);  
-	        CaLeNdAr.set(java.util.Calendar.MILLISECOND, 0);
-			return CaLeNdAr.getTime();
+			calendar.set(java.util.Calendar.HOUR_OF_DAY, 0);//modify the indentation,'CaLeNdAr' changed to 'calendar' 
+			calendar.set(java.util.Calendar.MINUTE, 0);  //modify the indentation,'CaLeNdAr' changed to 'calendar'
+			calendar.set(java.util.Calendar.SECOND, 0);  //modify the indentation,'CaLeNdAr' changed to 'calendar'
+			calendar.set(java.util.Calendar.MILLISECOND, 0);//modify the indentation,'CaLeNdAr' changed to 'calendar'
+			return calendar.getTime();//'CaLeNdAr' changed to 'calendar'
 		}
 		catch (Exception e) {
 			throw new RuntimeException(e);
 		}	
 	}
 
-	public synchronized Date Due_Date(int loanPeriod) {
-		Date NoW = Date();
-		CaLeNdAr.add(java.util.Calendar.DATE, loanPeriod);
-		Date DuEdAtE = CaLeNdAr.getTime();
-		CaLeNdAr.setTime(NoW);
-		return DuEdAtE;
+	public synchronized Date getDueDate(int loanPeriod) {//'Due_Date' changed to 'getDueDate'
+		Date date = new Date();//'NoW' changed to 'date',add new before Date();
+		calendar.add(java.util.Calendar.DATE, loanPeriod);//'CaLeNdAr' changed to 'calendar' 
+		Date dueDate = calendar.getTime();//'DuEdAtE' changed to 'dueDate','CaLeNdAr' changed to 'calendar' 
+		calendar.setTime(date);//'NoW' changed to 'date','CaLeNdAr' changed to 'calendar' 
+		return dueDate;//'NoW' changed to 'date','DuEdAtE' changed to 'dueDate'
 	}
-	
-	public synchronized long Get_Days_Difference(Date targetDate) {
-		
-		long Diff_Millis = Date().getTime() - targetDate.getTime();
-	    long Diff_Days = TimeUnit.DAYS.convert(Diff_Millis, TimeUnit.MILLISECONDS);
-	    return Diff_Days;
+	public synchronized long getDaysDifference(Date targetDate) {//'Get_Days_Difference' changed to 'getDaysDifference'
+		Date date = new Date();//add this statement to create a new date object
+		long diffMillis = date.getTime() - targetDate.getTime();//modify the indentation,'Date()' changed to 'date','Diff_Millis' changed to 'diffMillis'
+		long diffDays = TimeUnit.DAYS.convert(diffMillis, TimeUnit.MILLISECONDS);//modify the indentation,'Diff_Millis' changed to 'diffMillis','Diff_Days' changed to 'diffDays'
+		return diffDays;//modify the indentation,'Diff_Days' changed to 'diffDays'
 	}
-
 }
